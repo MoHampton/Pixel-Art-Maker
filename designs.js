@@ -1,18 +1,30 @@
 $(document).ready(function() {
+
 // Variable: Select color 
   let gridCol = $("#colorPicker").val();
+
 // Variable: Select grid size
   let rowCount = $("#inputHeight").val();
   let colCount = $("#inputWidth").val();
+
 // When size is submitted by the user, call makeGrid()
   $("#submit").click(function() {
     makeGrid();
   });
+
 // Event listener to add color
   $("table").on("click", "td", function() {
     gridCol = $("#colorPicker").val();
     $(this).css("background-color", gridCol);
   });
+
+// Click & drag color action
+  $("table").on("mousemove mouseenter mouseleave mouseover", "td", function(e) {
+     if (e.which === 1) {
+      gridCol = $("#colorPicker").val();
+       $(this).css("background-color", myCol);
+     }
+   });
 
   function makeGrid() {
     resetGrid(); //Resets the grid and removes old pixel art
