@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    
 // Variable: Select color 
   let gridCol = $("#colorPicker").val();
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
   $("table").on("mousemove mouseenter mouseleave mouseover", "td", function(e) {
      if (e.which === 1) {
       gridCol = $("#colorPicker").val();
-       $(this).css("background-color", myCol);
+       $(this).css("background-color", gridCol);
      }
    });
 
